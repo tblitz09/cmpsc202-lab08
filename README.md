@@ -65,13 +65,13 @@ Trace Dijkstra's algorithm starting from Node $A$ to find the shortest path to N
    > It would visit node $C$ after $A$ since it has the least amount of weight between (1 < 2).
 
 2. What will Dijkstra's algorithm declare as the shortest path to $C$, and what is its weight?
-   > It would declare that A to B to C would be the shortest path to $C$ since the path weight would be -3.
+   > The algorithm would declare as the shortest path to $C$ would be A to C. And the weight would be 1. 
 
 3. Look at the graph manually. What is the *actual* shortest path from $A$ to $C$, and what is its total weight? 
-   > The actual shortest path from $A$ to $C$ is A to C since it is only one. That weight would be 1. 
+   > The actual shortest path from $A$ to $C$ would be A to B to C and the total weight would be -3. 
 
 4. **The Trap:** Explain exactly *why* Dijkstra's algorithm failed to find the correct shortest path in this scenario.
-   > The algorithm tries to find the least amount of weight between the nodes. The least amount of weight between the nodes would be the -3 path, however the true shortest path would be 1. Distance is an aboslute so finding the least is not nessessarily the best. 
+   > The algorithm failed this because it was not able to see that B to C had a weight of -3. So the algorithm went straight for the shortest at the beginning which would be A to C. 
 
 ---
 
