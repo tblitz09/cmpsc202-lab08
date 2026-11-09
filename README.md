@@ -41,10 +41,10 @@ Starting at Node $A$, trace Dijkstra's algorithm. Fill in the tracker table belo
 | Step | Current Node | Neighbors to Check | `dist` Map | `visited` Set | 
 | :--- | :--- | :--- | :--- | :--- | 
 | 0 | $A$ | $B$, $C$ | $A$:0, $B$:4, $C$:2 | { } | 
-| 1 | | | | | 
-| 2 | | | | | 
-| 3 | | | | | 
-| 4 | | | | | 
+| 1 | $C$ | $B$, $D$ | $C$:2, $B$:1, $D$:8 | {$A$:0, $B$:3, $C$:2} | 
+| 2 | $B$ | $D$, $A$ | $B$:3, $D$: 5 | {$A$:0, $B$:3, $C$:2, $D$: 8} | 
+| 3 | $D$ | $B$, $C$, $E$ | $B$: 3, $C$: 8, $E$: 2 | {$A$:0, $B$:3, $C$:2, $D$: 8, $E$: 10} | 
+| 4 | $E$ | $C$, $D$| $C$:10, $D$: 2 | {$A$:0, $B$:3, $C$:2, $D$: 8, $E$: 10} | 
 
 **Conceptual Question:**
 When we add a vertex to the "visited" set, why are we 100% certain we have found the absolute shortest path to that node? 
