@@ -41,10 +41,10 @@ Starting at Node $A$, trace Dijkstra's algorithm. Fill in the tracker table belo
 | Step | Current Node | Neighbors to Check | `dist` Map | `visited` Set | 
 | :--- | :--- | :--- | :--- | :--- | 
 | 0 | $A$ | $B$, $C$ | $A$:0, $B$:4, $C$:2 | { } | 
-| 1 | $C$ | $B$, $D$ | $C$:2, $B$:1, $D$:8 | { $A$:0, $B$:3, $C$:2} | 
-| 2 | $B$ | $D$, $A$ | $B$:3, $D$:5 | { $A$:0, $B$:3, $C$:2, $D$: 8} | 
-| 3 | $D$ | $B$, $C$, $E$ | $B$:3, $C$: 8, $E$:2 | {$ A$:0, $B$:3, $C$:2, $D$: 8, $E$: 10} | 
-| 4 | $E$ | $C$, $D$| $C$: 10, $D$: 2 | { $A$:0, $B$:3, $C$:2, $D$: 8, $E$: 10} | 
+| 1 | $C$ | $B$, $D$ | $C$:2, $B$:1, $D$:8 | { $A$:0, $B$:3, $C$:2 } | 
+| 2 | $B$ | $D$, $A$ | $B$:3, $D$:5 | { $A$:0, $B$:3, $C$:2, $D$: 8 } | 
+| 3 | $D$ | $B$, $C$, $E$ | $B$:3, $C$: 8, $E$:2 | { $A$:0, $B$:3, $C$:2, $D$: 8, $E$: 10 } | 
+| 4 | $E$ | $C$, $D$| $C$: 10, $D$: 2 | { $A$:0, $B$:3, $C$:2, $D$: 8, $E$: 10 } | 
 
 **Conceptual Question:**
 When we add a vertex to the "visited" set, why are we 100% certain we have found the absolute shortest path to that node? 
@@ -71,7 +71,7 @@ Trace Dijkstra's algorithm starting from Node $A$ to find the shortest path to N
    > The actual shortest path from $A$ to $C$ is A to C since it is only one. That weight would be 1. 
 
 4. **The Trap:** Explain exactly *why* Dijkstra's algorithm failed to find the correct shortest path in this scenario.
-   > The algorithm tries to find the least amount of weight between the nodes. The least amount of weight between the nodes would be the -3 path, however the true shortest path would be 1. Distance is an aboslute so finding the least. 
+   > The algorithm tries to find the least amount of weight between the nodes. The least amount of weight between the nodes would be the -3 path, however the true shortest path would be 1. Distance is an aboslute so finding the least is not nessessarily the best. 
 
 ---
 
@@ -99,4 +99,4 @@ Standard Dijkstra's algorithm only understands *edges* and *edge weights*. It do
 
 2. How can you account for the $3$-minute waiting time at busy crosswalk intersections using *only* edge weights? (Hint: Think about how you could modify the weights of edges connecting to that intersection).
 
-   > You could 
+   > You could add 3 minutes to the edge weights that are about to approach a busy intersection. The robot would arrive at the destination and still have the weight of 3 minutes to sit out before it could cross. We just have to make sure the robot stops after it reaches the intersection.  
