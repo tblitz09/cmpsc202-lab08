@@ -41,14 +41,14 @@ Starting at Node $A$, trace Dijkstra's algorithm. Fill in the tracker table belo
 | Step | Current Node | Neighbors to Check | `dist` Map | `visited` Set | 
 | :--- | :--- | :--- | :--- | :--- | 
 | 0 | $A$ | $B$, $C$ | $A$:0, $B$:4, $C$:2 | { } | 
-| 1 | $C$ | $B$, $D$ | $C$:2, $B$:1, $D$:8 | {$A$:0, $B$:3, $C$:2} | 
-| 2 | $B$ | $D$, $A$ | $B$:3, $D$: 5 | {$A$:0, $B$:3, $C$:2, $D$: 8} | 
-| 3 | $D$ | $B$, $C$, $E$ | $B$: 3, $C$: 8, $E$: 2 | {$A$:0, $B$:3, $C$:2, $D$: 8, $E$: 10} | 
-| 4 | $E$ | $C$, $D$| $C$:10, $D$: 2 | {$A$:0, $B$:3, $C$:2, $D$: 8, $E$: 10} | 
+| 1 | $C$ | $B$, $D$ | $C$:2, $B$:1, $D$:8 | { $A$:0, $B$:3, $C$:2} | 
+| 2 | $B$ | $D$, $A$ | $B$:3, $D$:5 | { $A$:0, $B$:3, $C$:2, $D$: 8} | 
+| 3 | $D$ | $B$, $C$, $E$ | $B$:3, $C$: 8, $E$:2 | {$ A$:0, $B$:3, $C$:2, $D$: 8, $E$: 10} | 
+| 4 | $E$ | $C$, $D$| $C$: 10, $D$: 2 | { $A$:0, $B$:3, $C$:2, $D$: 8, $E$: 10} | 
 
 **Conceptual Question:**
 When we add a vertex to the "visited" set, why are we 100% certain we have found the absolute shortest path to that node? 
-> *Your answer here*
+> We are 100% certain we have found the absolute shortest path to that node because we are using a greedy approach when it comes to finding the path needed to reach a node. The greedy approach checks nodes to see if it is in the visited set and if not then where it is reached is the absolute shortest path. This greedy approach ensures that we will find the absolute shortest path to the node.
 
 ---
 
@@ -62,16 +62,16 @@ Dijkstra's algorithm relies on an assumption about the weights. Let's see what h
 Trace Dijkstra's algorithm starting from Node $A$ to find the shortest path to Node $C$.
 
 1. Which node does Dijkstra's algorithm visit first after $A$?
-   > *Your answer here*
+   > It would visit node $C$ after $A$ since it has the least amount of weight between (1 < 2).
 
 2. What will Dijkstra's algorithm declare as the shortest path to $C$, and what is its weight?
-   > *Your answer here*
+   > It would declare that A to B to C would be the shortest path to $C$ since the path weight would be -3.
 
 3. Look at the graph manually. What is the *actual* shortest path from $A$ to $C$, and what is its total weight? 
-   > *Your answer here*
+   > The actual shortest path from $A$ to $C$ is A to C since it is only one. That weight would be 1. 
 
 4. **The Trap:** Explain exactly *why* Dijkstra's algorithm failed to find the correct shortest path in this scenario.
-   > *Your answer here*
+   > The algorithm tries to find the least amount of weight between the nodes. The least amount of weight between the nodes would be the -3 path, however the true shortest path would be 1. Distance is an aboslute so finding the least. 
 
 ---
 
@@ -95,8 +95,8 @@ Standard Dijkstra's algorithm only understands *edges* and *edge weights*. It do
 
 1. How should you represent the paths with stairs in your graph so the algorithm never tries to use them?
 
-   > *Your answer here*
+   > You can set the paths with stairs as a weight of infinity, so that the algorithm will not even think to use them since the weight is so great. 
 
 2. How can you account for the $3$-minute waiting time at busy crosswalk intersections using *only* edge weights? (Hint: Think about how you could modify the weights of edges connecting to that intersection).
 
-   > *Your answer here*
+   > You could 
